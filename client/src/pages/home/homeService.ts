@@ -15,23 +15,14 @@ export class HomeService {
       .map(response => response.json());
   }
 
-  postQuote(quote: any) {
+  postQuote(quote: any) : Observable<any> {
     let headers = new Headers();
     headers.append('Content-Type', 'application/json');
+    return this._http.post("http://localhost:8080/quotes/", JSON.stringify(quote), { headers: headers });
 
-    this._http.post("http://localhost:8080/quotes/", JSON.stringify(quote), { headers: headers })
-      .map(res => res.json())
-      .subscribe(data => {
-        console.log(data);
-      });
   }
 
-  deleteQuote(quote: any) {
-    console.log(quote.id);
-    console.log(quote);
-    let headers = new Headers();
-    headers.append('Content-Type', 'application/json');
-    this._http.delete("http://localhost:8080/quotes/" + quote.id, JSON.stringify(quote));
-
+  deleteQuote(quote: any) : Observable<any> {
+    return this._http.delete("http://localhost:8080/quotes/" + quote.id);
   }
 }
