@@ -35,7 +35,6 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-<<<<<<< HEAD
 		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
@@ -45,9 +44,6 @@
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
     </dependencies>
-=======
-	</dependencies>
->>>>>>> d85b822207fa5913e4a5987f0b11366847087422
 
 	<build>
 		<plugins>

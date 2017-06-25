@@ -16,13 +16,11 @@ public class Quote
 
     private String message;
 
-    public Quote()
-    {
-    }
+    public Quote() {}
 
-    public Quote(String msg)
+    public Quote(String message)
     {
-        this.message = msg;
+        this.message = message;
     }
 
     public Long getId()
@@ -40,9 +38,9 @@ public class Quote
         return message;
     }
 
-    public void setMessage(String message)
+    public void setMessage(String messages)
     {
-        this.message = message;
+        this.message = messages;
     }
 }
 

@@ -42,11 +42,12 @@ export class HomePage {
   }
 
   editQuote(quote){
+    console.log(quote);
 
   let prompt = this.alertCtrl.create({
-    title: 'Edit Note',
+    title: 'Edit Quote',
     inputs: [{
-      name: 'title'
+      name: 'newQuote'
     }],
     buttons: [
       {
@@ -55,12 +56,20 @@ export class HomePage {
       {
         text: 'Save',
         handler: data => {
-          
+          quote.message = data.newQuote;
+          this.homeService.updateQuote(quote)
+            .map(res => res.json())
+            .subscribe(data => {
+              console.log(data);
+              this.getQuotes();
+            });
         }
       }
     ]
   });
 
+
+ this.getQuotes();
   prompt.present();
 
 }
