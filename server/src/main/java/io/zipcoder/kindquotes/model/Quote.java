@@ -1,6 +1,7 @@
 package io.zipcoder.kindquotes.model;
 
 
+<<<<<<< HEAD
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,6 +32,16 @@ public class Quote
         this.id = id;
     }
 
+=======
+public class Quote {
+
+    private String message;
+
+    public Quote(String msg){
+        this.message = msg;
+    }
+
+>>>>>>> d85b822207fa5913e4a5987f0b11366847087422
     public String getMessage() {
         return message;
     }

@@ -7,6 +7,7 @@
 </ion-header>
 
 <ion-content padding>
+<<<<<<< HEAD
   <form (ngSubmit)="postQuote()">
     <ion-item>
       <ion-input type="text" [(ngModel)]="quote.message" name="quote"></ion-input>
@@ -27,3 +28,11 @@
       </ion-item-options>
     </ion-item-sliding>
   </ion-list>
+=======
+  <ion-list>
+    <ion-item *ngFor="let quote of quotes">
+      <div>{{quote.message}}</div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+>>>>>>> d85b822207fa5913e4a5987f0b11366847087422

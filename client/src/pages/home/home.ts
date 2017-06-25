@@ -13,11 +13,13 @@ export class HomePage {
   quotes: any;
 
   constructor(public navCtrl: NavController, public homeService:HomeService) {
-    this.getQuotes();
+    homeService.getAllQuotes().subscribe(data =>{
+      this.quotes = data;
+    })
   }
 
   getQuotes(){
-    this.homeService.getAllQuotes().subscribe(data =>{
+    this.homeService.getAllQuotes().subscribe(data => {
       this.quotes = data;
     })
   }
@@ -37,5 +39,4 @@ export class HomePage {
   quote = {
     message: ''
   }
-
 }
